@@ -1,0 +1,18 @@
+<apex:page controller="ExportToCSVController">
+    <script src="/soap/ajax/44.0/connection.js"></script>
+    <script src="/soap/ajax/44.0/apex.js"></script>
+
+    <apex:form >
+        <apex:commandButton value="Export to CSV" action="{!exportToCSV}" rerender="outputPanel"/>
+    </apex:form>
+    <apex:outputPanel id="outputPanel">
+        <script>
+            var result = sforce.apex.execute("AccountToCSV1", "exportAccountDataToCSV", {});
+            if (result) {
+                alert("CSV file has been generated and saved in Salesforce.");
+            } else {
+                alert("An error occurred while exporting data to CSV.");
+            }
+        </script>
+    </apex:outputPanel>
+</apex:page>

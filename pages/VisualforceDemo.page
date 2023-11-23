@@ -1,0 +1,14 @@
+<apex:page > 
+ <apex:form >
+ <apex:outputLabel value="Enter Name:" for="name"></apex:outputLabel>
+ <apex:inputText id="name"/><br><br></br></br>
+ 
+ <apex:outputLabel value="Enter UserName:" for="username"></apex:outputLabel>
+ <apex:inputText id="username"/><br><br></br></br>
+ 
+ <apex:OutputLabel value="Enter Password:" for="password"></apex:OutputLabel>
+ <apex:inputsecret id="password"/><br><br></br></br>
+ 
+ <apex:outputLink value="https://www.ceptes.com/">Ceptes Software</apex:outputLink>
+ </apex:form>
+</apex:page>

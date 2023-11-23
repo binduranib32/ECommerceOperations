@@ -1,0 +1,11 @@
+<apex:page controller="DotCasesCSVController">
+    <apex:form id="theForm">
+        <apex:actionFunction name="downloadCSV" action="{!generateAndDownloadCSV}" reRender="theForm"/>
+    </apex:form>
+    <script>
+        // JavaScript function to initiate the download
+        function initDownload() {
+            downloadCSV();
+        }
+    </script>
+</apex:page>

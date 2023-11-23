@@ -1,0 +1,10 @@
+<template>
+    <lightning-card title="Using Wire Property to call a apex">
+        <template if:true={accounts}>
+            <template for:each={accounts} for:item="acc">
+                <p key={acc.Id}>{acc.Name}</p>
+            </template>
+        </template>
+        <template if:true={error}></template>
+    </lightning-card>
+</template>

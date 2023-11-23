@@ -1,0 +1,18 @@
+<template>
+    <!-- Hello {uname} -->
+
+    <template if:true={HotelInfo.data}>  
+        <div style="height: 300px;">   
+        <lightning-datatable
+        key-field="id"
+        data={HotelInfo.data}
+        columns={columns}
+        hide-checkbox-column="true"  
+        show-row-number-column="true"
+        onrowaction={handlerowselect}    
+        >
+        <!-- <div id="1" class="d-up"> Flight Detail</div> -->
+</lightning-datatable>
+        </div>
+</template>
+</template>

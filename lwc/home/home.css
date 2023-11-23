@@ -1,0 +1,77 @@
+*, :after, :before {
+    box-sizing: inherit;
+    box-sizing: border-box;
+}
+
+div {
+    display: block;
+}
+
+.HeroBannerDefault {
+    background-size: cover;
+    background-position: 50%;
+}
+
+.HeroBannerDefault__HeroImage {
+    padding: 32px 0 16px;
+}
+
+.HeroBannerDefault__HeroImage__Content {
+    margin: 0 auto;
+    padding: 0 32px;
+    color: #fff;
+    font-size: 20px;
+    max-width: 1100px;
+}
+
+.HeroBannerDefault__HeroImage__Content__Info {
+    min-height: 162px;
+}
+
+.HeroBannerDefault__HeroImage__Content__Info--text {
+    width: calc(100% - 185px);
+    display: inline-block;
+}
+
+.HeroBannerDefault__HeroImage__Content__Info__Description {
+    font-size: 32px;
+    margin-top: 12px;
+}
+
+.theme-agoda .HeroBannerDefault__HeroImage__SearchBox {
+    margin-top: 16px;
+}
+.CampaignLandingSearchBoxContainer {
+    margin: 0 auto;
+    padding: 0 16px;
+    height: 400px;
+}
+
+.slds-align_absolute-center{
+    float: center;
+    
+}
+element.style {
+    border-color: rgb(224, 0, 0);
+    background-color: rgb(255, 255, 255);
+    width: 30px;
+    height: 30px;
+}
+
+.fpPMBo {
+    /* width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap; */
+
+
+    font-family: 'Open Sans', sans-serif, Tahoma, Arial!important;
+    width: 250px;
+    float: left;
+    position: relative;
+    border-right: 1px solid #d6d3d3;
+    padding: 0;
+    height: 65px;
+    /* margin-left: 10px; */
+    margin-right: 30px;
+}

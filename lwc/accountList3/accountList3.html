@@ -1,0 +1,11 @@
+<template>
+    <lightning-card title="Calling apex method imperatively">
+        <lightning-button label="Load Account" onclick={handleLoad}></lightning-button>
+        <template if:true={accounts}>
+            <template for:each={accounts} for:item="acc">
+                <p key={acc.Id}>{acc.Name}</p>
+            </template>
+        </template>
+        <template if:true={error}>{error}</template>
+    </lightning-card>
+</template>

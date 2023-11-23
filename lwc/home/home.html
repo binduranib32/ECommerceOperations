@@ -1,0 +1,150 @@
+<template>
+    
+    <div class="CampaignLandingPage">
+        <div class="HeroBannerDefault" style="background-image: url(https://ceptessoftware23-dev-ed--c.visualforce.com/resource/1650569458000/SampleHome);">
+        <div class="HeroBannerDefault__HeroImage"><div class="HeroBannerDefault__HeroImage__Content">
+        <div class="HeroBannerDefault__HeroImage__Content__Info">
+        <div class="HeroBannerDefault__HeroImage__Content__Info--text">
+        <div class="HeroBannerDefault__HeroImage__Content__Info__Description">
+        <h3 style="font-size: 1.5em">Your entire holiday in one click!</h3> 
+        <strong><p>Book Hotel </p></strong>
+        </div> 
+         </div>
+         </div>
+         </div>
+         <div class="HeroBannerDefault__HeroImage__SearchBox">
+         <div class="CampaignLandingSearchBoxContainer">
+         <div class="CampaignLandingSearchBoxContainer__Package">
+         <div class="PackageSearchContainer">
+         <div class="FlightSearchContainer FlightSearchContainer--vertical" data-selenium="searchbox-vertical">
+         <div class="FlightSearchContainer__Wrapper">
+         <div class="Box-sc-kv6pi1-0 ixweFQ">
+         <div class="Box-sc-kv6pi1-0 biFXRb">
+         <div class="BaseButtonstyled__HiddenToggler-sc-12j2fzo-2 fMuMFt">
+         <div class="Box-sc-kv6pi1-0 hRUYUu">
+         <span class="Spanstyled__SpanStyled-sc-16tp9kb-0 gBHCUV kite-js-Span Box-sc-kv6pi1-0 jYjFkI"></span>
+         </div>
+         </div>
+         </div>
+        </div>
+         <div class="FlightSearchContainer__Row">
+         <div class="SearchSelection">
+         <div class="AutocompleteSearch SearchSelection__Element NewDesign">
+         <div tabindex="0" class="IconBox AutocompleteSearch__IconBox IconBox--origin" data-element-name="packages-origin-text-search" data-component="packages-origin-text-search">
+         <div class="IconBox__wrapper">
+         <div class="IconBox__child" data-selenium="icon-box-child">
+         <div class="Box-sc-kv6pi1-0 fpPMBo">
+         </div>
+         </div>
+         </div>
+         </div>
+         <div class="AutocompleteSearch__PopupContainer">
+         </div>
+         </div>
+         </div>
+         <div class="FlightSearchContainer__DateSelection">
+         <div class="DateSelector FlightDateSelector">
+         <div tabindex="0" class="IconBox IconBox--startDate IconBox--checkIn DateSelector__IconBox" data-element-name="packages-departure-return">
+         <div class="IconBox__wrapper">
+         <i class="ficon IconBox__icon ficon-20 ficon-check-in" data-selenium="ficon-icon-box"></i>
+         <div class="IconBox__child" data-selenium="icon-box-child">
+         <div data-selenium="flight-date-selector" data-component="flight-search-departureDate" class="SearchBoxTextDescription SearchBoxTextDescription--NewDesign DateSelector__Description">
+         </div>
+         </div>
+         </div>
+         </div>
+         <div class="DateSelector__PopupContainer"></div>
+         </div>
+         <div class="DateSelector FlightDateSelector">
+         <div tabindex="0" class="IconBox IconBox--endDate IconBox--checkOut DateSelector__IconBox" data-element-name="packages-departure-return">
+         <div class="IconBox__wrapper">
+          <i class="ficon IconBox__icon ficon-20 ficon-check-out" data-selenium="ficon-icon-box"></i>
+         <div class="IconBox__child" data-selenium="icon-box-child">
+         <div data-selenium="flight-date-selector" data-component="flight-search-returnDate" class="SearchBoxTextDescription SearchBoxTextDescription--NewDesign DateSelector__Description">
+         <div class="SearchBoxTextDescription__title" data-selenium="date-selector-title"></div>
+         </div>
+         </div>
+         </div>
+         </div>
+         <div class="DateSelector__PopupContainer"></div>
+         </div>
+         </div>
+         </div>
+         <div class="FlightSearchContainer__Row" >
+         <div class="SearchSelection">
+         <div class="FlightSearchOccupancy SearchSelection__Element">
+         <div tabindex="0" class="IconBox FlightSearchOccupancy__IconBox" data-element-name="packages-flight-occupancy" data-component="flight-search-occupancy">
+         <div class="IconBox__wrapper">
+         <i class="ficon IconBox__icon ficon-20 ficon-travelers" data-selenium="ficon-icon-box"></i>
+         <div class="IconBox__child" data-selenium="icon-box-child">
+         <div data-component="flight-search-occupancy" class="SearchBoxTextDescription SearchBoxTextDescription--NewDesign FlightSearchOccupancy__Description">
+         <div class="SearchBoxTextDescription__title"></div>
+         </div>
+         </div>
+         </div>
+         </div>
+         </div>
+        </div>
+         <div class="BaseButtonstyled__HiddenToggler-sc-12j2fzo-2 fMuMFt">
+         <div class="Box-sc-kv6pi1-0 fpPMBo">
+            <template if:true={HotelType__cPicklist.data}>
+                <lightning-combobox name="HotelType" label="Hotel Type" value={HotelTypevalue}
+                    options={HotelType__cPicklist.data.values} onchange={handle_HotelType_Change} required placeholder="Choose Hotel Type">
+                </lightning-combobox>
+            </template>
+            <p>Selected Hotel Type is: {HotelTypevalue}</p>
+
+         </div>
+     
+         <div class="Box-sc-kv6pi1-0 fpPMBo">
+            <template if:true={HotelCity__cPicklist.data}>
+                <lightning-combobox name="HotelCity" label="Hotel City" value={HotelCityValue}
+                    options={HotelCity__cPicklist.data.values} onchange={handle_HotelCity_Change} required placeholder="Choose Hotel City">
+                </lightning-combobox>
+            </template>
+            <p>Selected Hotel City is: {HotelCityValue}</p>
+         </div>
+         <br/>
+         <div class="slds-max-medium-table_stacked">
+         <lightning-button  label="Search Hotels" class="slds-align_absolute-center"  role="button" style="height:5rem" 
+         onclick={handle_Submit} ></lightning-button>
+         <template if:true={HotelInfo.data}>
+            <lightning-datatable 
+                                key-field="id"
+                                data={HotelInfo.data}
+                                columns={columns}
+                                hide-checkbox-column="true"  
+                                show-row-number-column="true"
+                                onrowaction={handlerowselect}>
+            </lightning-datatable>
+            </template> 
+            
+        </div>
+       
+        </div></br>
+        &nbsp;&nbsp;
+       <!-- <lightning-card title="Navigation to Booking Page"> </lightning-card>-->
+            
+         </div>
+         <!-- <div class="slds-align_absolute-center">
+            <lightning-button-group>
+                <lightning-button label="New Booking" onclick={navigateToBookingPage}></lightning-button>
+            </lightning-button-group>
+         </div> -->
+         </div>
+         </div>
+         <div class="Box-sc-kv6pi1-0 ieNLoJ CheckBoxWithBadge__Container">
+         <div class="Box-sc-kv6pi1-0 dzzBaB">
+         </div>
+         </div>
+        <noscript>
+        </noscript>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+      </div>
+    
+</template>

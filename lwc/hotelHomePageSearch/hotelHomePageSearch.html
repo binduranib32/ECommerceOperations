@@ -1,0 +1,64 @@
+<!-- sldsValidatorIgnore -->
+<template>
+    <!-- <lightning-card title="Select Hotel Type" icon-name="standard:user">
+       
+        <div class="slds-var-m-around_medium">
+            <template if:true={HotelType__cPicklist.data}>
+                <lightning-combobox name="HotelType" label="Hotel Type" value={HotelTypevalue}
+                    options={HotelType__cPicklist.data.values} onchange={handle_HotelType_Change} required placeholder="Choose Hotel Type">
+                </lightning-combobox>
+            </template>
+            <p>Selected Hotel Type is: {HotelTypevalue}</p>
+        </div>
+
+</lightning-card>
+     -->
+<!-- <lightning-card title="Select Hotel City" icon-name="standard:user">
+        <div class="slds-var-m-around_medium">
+            <template if:true={HotelCity__cPicklist.data}>
+                <lightning-combobox name="HotelCity" label="Hotel City" value={HotelCityValue}
+                    options={HotelCity__cPicklist.data.values} onchange={handle_HotelCity_Change} required placeholder="Choose Hotel City">
+                </lightning-combobox>
+            </template>
+            <p>Selected Hotel City is: {HotelCityValue}</p>
+        </div>
+
+    </lightning-card> -->
+    <!-- <div class="slds-max-medium-table_stacked"> -->
+        
+         <template if:true={HotelInfo.data}>
+        <lightning-datatable 
+                            key-field="id"
+                            data={HotelInfo.data}
+                            columns={columns}>
+        </lightning-datatable>
+        </template>
+
+        
+      
+        <!-- <lightning-button  label="Search Hotels" class="slds-align_absolute-center"  role="button" style="height:5rem" 
+         onclick={handle_Submit} ></lightning-button> -->
+   
+
+        <!-- <lightning-card title="Data Sorting in Lightning Datatable in LWC" icon-name="standard:hotel" >
+            <br/>
+            <div style="width: auto;">
+                <template if:true={data}>
+                    <lightning-datatable data={data}
+                                         columns={columns}
+                                         key-field="id"
+                                         sorted-by={sortBy}
+                                         sorted-direction={sortDirection}
+                                         onsort={doSorting}
+                                         hide-checkbox-column="true"></lightning-datatable>
+                </template>
+            </div>
+        </lightning-card> -->
+
+ 
+    <!-- <lightning-card title="Navigation to Booking Page">
+        <lightning-button-group>
+            <lightning-button label="New Booking" onclick={handle_Submit}></lightning-button>
+        </lightning-button-group>
+    </lightning-card> -->
+</template>

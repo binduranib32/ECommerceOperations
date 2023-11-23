@@ -1,0 +1,14 @@
+<apex:page standardController="Account">
+ <apex:form >
+ <apex:pageBlock title="Display the records in Tabular Format">
+ <apex:pageblockTable value="{!account.contacts}" var="item">
+ 
+ <apex:column value="{!item.name}"/>
+ <apex:column value="{!item.title}"/>
+ <apex:column value="{!item.owner.name}"/>
+
+ 
+ </apex:pageblockTable>
+ </apex:pageBlock>
+ </apex:form>
+</apex:page>
